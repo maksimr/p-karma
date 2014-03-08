@@ -1,10 +1,10 @@
-# Presentation Title
+# Karma - Spectacular Test Runner for Javascript
 
-[Author](http://sapegin.me) and any other content to show above slides.
+[Maksim Ryzhikov](https://plus.google.com/+MaksimRyzhikov)
 
 !SLIDE #SlideID class1 class2
 
-## Slide Title
+## Slide Title 1
 
 ![Image](pictures/pic.png)
 

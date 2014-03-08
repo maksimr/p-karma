@@ -1,15 +1,17 @@
 {
-    "name": "presentation-karma",
-    "version": "0.0.0",
-    "author": {
-        "name": "Maksim Ryzhikov",
-        "email": "rv.maksim@yandex.com"
-    },
-    "devDependencies": {
-        "grunt": "~0.4.3",
-        "grunt-cli": "~0.1.9",
-        "grunt-contrib-watch": "~0.5.0",
-        "grunt-shower-markdown": "~0.2.0",
-        "load-grunt-tasks": "~0.2.0"
-    }
+  "name": "presentation-karma",
+  "version": "0.0.0",
+  "author": {
+    "name": "Maksim Ryzhikov",
+    "email": "rv.maksim@yandex.com"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.3",
+    "grunt-cli": "~0.1.9",
+    "grunt-contrib-watch": "~0.5.0",
+    "grunt-shower-markdown": "~0.2.0",
+    "load-grunt-tasks": "~0.2.0",
+    "grunt-contrib-connect": "~0.7.1",
+    "connect-livereload": "~0.3.2"
+  }
 }

@@ -1,4 +1,9 @@
 module.exports = function(grunt) {
+    var path = require('path');
+    var mountFolder = function(connect, point) {
+        return connect.static(path.resolve(point));
+    };
+
     require('load-grunt-tasks')(grunt);
 
     grunt.initConfig({
@@ -9,8 +14,26 @@ module.exports = function(grunt) {
                 styles: 'shower/screen.css'
             }
         },
+        connect: {
+            options: {
+                livereload: true,
+            },
+            server: {
+                options: {
+                    middleware: function(connect) {
+                        return [
+                            require('connect-livereload')(),
+                            mountFolder(connect, '.')
+                        ];
+                    }
+                }
+            }
+        },
         watch: {
             shower: {
+                options: {
+                    livereload: true
+                },
                 files: [
                     'index.md'
                 ],
@@ -19,5 +42,5 @@ module.exports = function(grunt) {
         }
     });
 
-    grunt.registerTask('default', ['watch']);
+    grunt.registerTask('default', ['connect', 'watch']);
 };

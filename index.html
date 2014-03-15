@@ -8,45 +8,207 @@
 	<meta name="generator" content="https://github.com/sapegin/grunt-shower-markdown">
 	<link rel="stylesheet" href="themes/ribbon/styles/screen.css">
 	
-		<link rel="stylesheet" href="shower/screen.css?1394311847000">
+		<link rel="stylesheet" href="shower/screen.css?1394848558000">
 	
 </head>
 <body class="list">
 	<header class="caption">
-		<h1 id="karma-spectacular-test-runner-for-javascript">Karma - Spectacular Test Runner for Javascript</h1>
+		<h1 id="karma-test-runner-for-javascript">Karma - Test Runner for Javascript</h1>
 <p><a href="https://plus.google.com/+MaksimRyzhikov">Maksim Ryzhikov</a></p>
 
 	</header>
 
 	
-	<section class="slide class1 class2" id="SlideID"><div>
-		<h2>Slide Title 1</h2>
-<img src="pictures/pic.png" alt="Image">
-<img src="pictures/pic2.png" alt="Image with custom classes" class="place r b">
-<p class="note">Some HTML</p>
+	<section class="slide " id="Cover"><div>
+		<h2 class="subject">
+    <center>
+        Karma - Test Runner for Javascript
+    </center>
+</h2>
 
-<ul>
-<li>List item one</li>
-<li class="next">Two (delayed)</li>
-<li class="next">Three (delayed)</li>
-</ul>
 
 	</div></section>
 	
-	<section class="slide shoot" id="Cover"><div>
-		<h2>Hello world!</h2>
+	<section class="slide shout" ><div>
+		<h2>Качество &amp; Продуктивность</h2>
 
 	</div></section>
 	
 	<section class="slide " ><div>
-		<h2>Code example</h2>
-<p>``
-<mark>concat</mark>: {
-    main: {
-        text: <mark class="important">&#39;Hello world&#39;</mark>
-    }
-}
-```</p>
+		<h2>TDD - Test Driven Development</h2>
+<p>Ингредиенты успешного TDD</p>
+<ul>
+<li>Тестируемый код → <a href="http://angularjs.org/">AngularJS</a></li>
+<li>Удобное тестовое окружение → <a href="http://karma-runner.github.io/0.12/index.html">Karma</a></li>
+</ul>
+
+	</div></section>
+	
+	<section class="slide " ><div>
+		<h2>Тестовое окружение</h2>
+<ul>
+<li>Инструмент для запуска тестов → <a href="http://karma-runner.github.io/0.12/index.html">Karma</a></li>
+<li>Framework для написания тестов → <a href="http://visionmedia.github.io/mocha/">Mocha</a></li>
+<li>Библиотека Assertion`ов → <a href="https://github.com/LearnBoost/expect.js">Expect.js</a></li>
+</ul>
+
+	</div></section>
+	
+	<section class="slide " ><div>
+		<h2>Karma main goal</h2>
+<blockquote>
+<p>The <mark>main goal for Karma is to bring a productive testing environment to developers</mark>.
+The environment being one where they don`t have to set up loads of configurations, but rather a place where developers can <mark>just write the code and get instant feedback from their tests</mark>. Because getting quick feedback is what makes you productive and creative.</p>
+</blockquote>
+
+	</div></section>
+	
+	<section class="slide " ><div>
+		<h2><a href="http://karma-runner.github.io/0.12/intro/configuration.html">Установка и настройка</a></h2>
+<pre><code class="language-sh">npm install -g karma-cli</code>
+<code><mark>npm install karma # Install Karma</mark></code>
+<code>&shy;</code>
+<code>karma init # Create configuration file</code>
+<code>&shy;</code>
+<code><mark>npm install karma-mocha # Testing framework</mark></code>
+<code><mark>npm install karma-expect # Assertion lib</mark></code>
+<code><mark>npm install karma-phantomjs-launcher # Browser</mark></code></pre>
+
+	</div></section>
+	
+	<section class="slide small-text" ><div>
+		<h2>Запуск (Client-Server)</h2>
+<pre><code class="language-sh">karma <mark class="important">start</mark></code>
+<code>&shy;</code>
+<code>INFO [karma]: Karma v0.12.0 server started at <mark>http://localhost:9876/</mark></code>
+<code>INFO [launcher]: Starting browser PhantomJS</code>
+<code>INFO [PhantomJS 1.9.7 (Linux)]: Connected on socket M64_IXz with id 98199717</code>
+<code>PhantomJS 1.9.7 (Linux): Executed 1 of 1 SUCCESS (<mark>0.011 secs</mark> / 0.003 secs)</code></pre>
+
+	</div></section>
+	
+	<section class="slide small-text" ><div>
+		<h2><a href="http://karma-runner.github.io/0.12/config/configuration-file.html">Базовая настройка karma.conf.js</a></h2>
+<pre><code class="language-json">module.exports = function(config) {</code>
+<code>    config.set({</code>
+<code>        <mark class="important">frameworks:</mark> [&#39;mocha&#39;, &#39;expect&#39;],</code>
+<code>        files: <mark>[&#39;test/**/*.js&#39;]</mark>,</code>
+<code>        autoWatch: <mark>false</mark>,</code>
+<code>        singleRun: <mark>true</mark>,</code>
+<code>        <mark class="important">browsers</mark>: [&#39;PhantomJS&#39;]</code>
+<code>    });</code>
+<code>}</code></pre>
+
+	</div></section>
+	
+	<section class="slide small-text" ><div>
+		<h2>Watch &amp; Fast tests</h2>
+<pre><code class="language-sh">    karma start <mark class="important">--single-run=false --auto-watch=true</mark></code>
+<code>    ...</code>
+<code>    PhantomJS 1.9.7 (Linux): Executed 1 of 1 SUCCESS (0.038 secs / 0.005 secs)</code>
+<code>    <mark>INFO [watcher]: Changed file &quot;/tmp/karma/test/foo_spec.js&quot;.</mark></code>
+<code>    PhantomJS 1.9.7 (Linux): Executed 2 of 2 SUCCESS <mark>(0.037 secs / 0.006 secs)</mark></code>
+<code>    ...</code></pre>
+<center>
+    <p class="note">
+        ➜  Изменил файл ➜  Тесты  ➜  Изменил файл ➜  Тесты ... ➜
+    </p>
+</center>
+
+
+	</div></section>
+	
+	<section class="slide small-text" ><div>
+		<h2><a href="http://karma-runner.github.io/0.12/config/preprocessors.html">Выходя за рамки стандартного</a></h2>
+<pre><code class="language-json">module.exports = function(config) {</code>
+<code>    config.set({</code>
+<code>        files: <mark>[&#39;src/**/*.js&#39;, &#39;test/*.coffee&#39;, &#39;lib/*.dart&#39;]</mark>,</code>
+<code>        <mark class="important">preprocessors</mark>: {</code>
+<code>            &#39;**/*.js&#39;: [&#39;borschik&#39;],</code>
+<code>            &#39;**/*.coffee&#39;: <mark>[&#39;coffee&#39;]</mark>,</code>
+<code>            &#39;**/*.dart&#39;: [&#39;dart&#39;]</code>
+<code>        }</code>
+<code>    });</code>
+<code>}</code></pre>
+
+	</div></section>
+	
+	<section class="slide small-text" ><div>
+		<h2>Karma уже умеет тестировать:</h2>
+<ul>
+<li>✔ AngularJS</li>
+<li>✔ <a href="https://github.com/karma-runner/karma-traceur-preprocessor">Traceur</a></li>
+<li>✔ <a href="https://github.com/karma-runner/karma-ember-preprocessor">Ember</a></li>
+<li>✔ <a href="https://github.com/karma-runner/karma-html2js-preprocessor">html2js</a></li>
+<li>✔ <a href="https://github.com/karma-runner/karma-dart">Dart</a></li>
+<li>✔ <a href="https://github.com/karma-runner/karma-requirejs">Require.js</a></li>
+<li>✔ <a href="https://github.com/karma-runner/karma-commonjs">commonjs</a></li>
+<li>✔ <a href="https://github.com/karma-runner/karma-closure">closure</a></li>
+<li>✔ <a href="https://github.com/karma-runner/karma-dojo">Dojo</a></li>
+</ul>
+<p>... и это <mark>только часть plugin`ов</mark></p>
+
+	</div></section>
+	
+	<section class="slide shout" ><div>
+		<h2><a href="http://karma-runner.github.io/0.12/config/configuration-file.html">Any Browsers, Devices, OS</a></h2>
+
+	</div></section>
+	
+	<section class="slide small-text" ><div>
+		<p>Просто зайдите на host где запущен <mark>karma-server</mark></p>
+<img src="/img/karma-connect.png" alt="">
+<pre><code class="language-sh">Karma v0.12.0 server started at <mark>http://localhost:9876/</mark></code>
+<code>...</code>
+<code>PhantomJS 1.9.7 (Linux): Executed 2 of 2 SUCCESS (0.03 secs / 0.009 secs)</code>
+<code>Chromium 31.0.1650 (Ubuntu): Executed 2 of 2 SUCCESS (0.27 secs / 0.009 secs)</code>
+<code>TOTAL: 4 SUCCESS</code></pre>
+
+	</div></section>
+	
+	<section class="slide shout" ><div>
+		<h2>Debugging!</h2>
+
+	</div></section>
+	
+	<section class="slide " ><div>
+		<h2>WebStorm 7</h2>
+<img src="/img/karma-webstorm.png" alt="">
+
+	</div></section>
+	
+	<section class="slide " ><div>
+		<h2>WebStorm 7 with Debug</h2>
+<img src="/img/karma-debug.png" alt="">
+
+	</div></section>
+	
+	<section class="slide " ><div>
+		<h2>Debug in Browser</h2>
+<pre><code class="language-sh">http://localhost:9876/<mark class="important">debug.html</mark></code></pre>
+<img src="/img/karma-html-debug.png" alt="">
+
+	</div></section>
+	
+	<section class="slide compare" ><div>
+		<h2>Сравнения</h2>
+<img src="/img/karma-compare.png" alt="">
+
+	</div></section>
+	
+	<section class="slide shout" ><div>
+		<h2>Спасибо за внимание!!!</h2>
+
+	</div></section>
+	
+	<section class="slide " ><div>
+		<h2>Karma - Test Runner for Javascript</h2>
+<p>Максим Рыжиков, Yandex</p>
+<ul>
+<li><a href="https://twitter.com/maksimrv">twitter.com/maksimrv</a></li>
+<li><a href="https://plus.google.com/+MaksimRyzhikov">google+/Maksim Ryzhikov</a></li>
+<li><a href="https://github.com/maksimr">github/maksimr</a></li>
+</ul>
 
 	</div></section>
 	

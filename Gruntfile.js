@@ -35,7 +35,8 @@ module.exports = function(grunt) {
                     livereload: true
                 },
                 files: [
-                    'index.md'
+                    '<%= shower.index.src %>',
+                    '<%= shower.index.styles %>'
                 ],
                 tasks: ['shower']
             }

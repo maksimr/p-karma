@@ -141,7 +141,7 @@ module.exports = function(config) {
 
 Просто зайдите на host где запущен @@karma-server@@
 
-![](/img/karma-connect.png)
+![](img/karma-connect.png)
 
 ```sh
 Karma v0.12.0 server started at @@http://localhost:9876/@@
@@ -158,13 +158,13 @@ TOTAL: 4 SUCCESS
 !SLIDE
 
 ## WebStorm 7
-![](/img/karma-webstorm.png)
+![](img/karma-webstorm.png)
 
 !SLIDE
 
 ## WebStorm 7 with Debug
 
-![](/img/karma-debug.png)
+![](img/karma-debug.png)
 
 !SLIDE
 
@@ -174,13 +174,13 @@ TOTAL: 4 SUCCESS
 http://localhost:9876/@@@debug.html@@@
 ```
 
-![](/img/karma-html-debug.png)
+![](img/karma-html-debug.png)
 
 !SLIDE compare
 
 ## Сравнения
 
-![](/img/karma-compare.png)
+![](img/karma-compare.png)
 
 !SLIDE shout
 
